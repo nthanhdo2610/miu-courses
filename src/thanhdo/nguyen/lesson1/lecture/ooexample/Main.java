@@ -1,7 +1,7 @@
 package thanhdo.nguyen.lesson1.lecture.ooexample;
-import java.util.Scanner;
+import thanhdo.nguyen.lesson1.lecture.ooexample.employeeinfo.Employee;
 
-import lesson1.lecture.ooexample.employeeinfo.*;
+import java.util.Scanner;
 
 public class Main {
 
