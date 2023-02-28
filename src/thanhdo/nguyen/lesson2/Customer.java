@@ -1,20 +1,19 @@
 package thanhdo.nguyen.lesson2;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 public class Customer {
 
     private String name;
-    private String email;
-    private String phoneNumber;
-    private String address;
+    private ShoppingCart cart;
+    private List<Order> orders;
 
-    private final ShoppingCart cart;
-
-    public Customer(String name, String email, String phoneNumber, String address) {
+    public Customer(String name) {
         this.name = name;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.address = address;
         this.cart = new ShoppingCart();
+        this.orders = new ArrayList<>();
     }
 
     public String getName() {
@@ -25,31 +24,37 @@ public class Customer {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public ShoppingCart getCart() {
         return cart;
+    }
+
+    public void setCart(ShoppingCart cart) {
+        this.cart = cart;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+
+    public void addOrder(Date orderDate){
+        if(cart.getItems().isEmpty()){
+            return;
+        }
+        Order order = new Order(cart.getItems(), orderDate);
+        orders.add(order);
+        this.cart= new ShoppingCart();
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name + '\'' +
+                ", cart=" + cart +
+                ", orders=" + orders +
+                '}';
     }
 }

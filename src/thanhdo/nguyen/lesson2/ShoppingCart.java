@@ -18,4 +18,19 @@ public class ShoppingCart {
     public void setItems(List<Object> items) {
         this.items = items;
     }
+
+    public void addItem(Object item){
+        items.add(item);
+    }
+
+    public void removeItem(Object item){
+        items.remove(item);
+    }
+
+    @Override
+    public String toString() {
+        return "ShoppingCart{" +
+                "items=" + items +
+                '}';
+    }
 }
