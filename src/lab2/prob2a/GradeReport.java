@@ -1,4 +1,4 @@
-package prob2a;
+package lab2.prob2a;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package prob2b;
+package lab2.prob2b;
 
 public class Main2B {
 

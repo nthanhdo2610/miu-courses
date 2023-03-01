@@ -1,4 +1,4 @@
-package prob2b;
+package lab2.prob2b;
 
 import java.util.List;
 import java.util.UUID;
