@@ -1,9 +1,9 @@
 package lesson3.labs.prob2;
 import java.util.*;
 
-//import lesson3.labsolns.prob2.Apartment;
-//import lesson3.labsolns.prob2.Building;
-//import lesson3.labsolns.prob2.LandlordInfo;
+import lesson3.labsolns.prob2.Apartment;
+import lesson3.labsolns.prob2.Building;
+import lesson3.labsolns.prob2.LandlordInfo;
 
 /** 
  * Main class is for testing your code; you can uncomment

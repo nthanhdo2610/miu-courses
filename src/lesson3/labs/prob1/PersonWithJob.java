@@ -29,5 +29,4 @@ public class PersonWithJob extends Person {
 		System.out.println("p2.equals(p1)? " + p2.equals(p1));
 	}
 
-
 }
