@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/Users/bright/Documents/MPP/workspace/jars/derbyclient.jar"/>
+	<classpathentry kind="lib" path="/Users/bright/Documents/MPP/workspace/jars/logsetup.jar"/>
+	<classpathentry kind="lib" path="/Users/bright/Documents/MPP/workspace/jars/dataaccess.jar" sourcepath="/DataAccess/src.zip"/>
+	<classpathentry kind="lib" path="/Users/bright/Downloads/FPP/workspace/jars/mysql-connector-java-5.1.20-bin.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
