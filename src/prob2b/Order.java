@@ -8,6 +8,11 @@ public class Order {
     private UUID orderNum;
     private List<OrderLine> lines;
 
+    Order(UUID orderNum) {
+        this.orderNum = orderNum;
+        this.lines = new ArrayList<>();
+    }
+
     public Order(UUID orderNum, List<OrderLine> lines) {
         if (lines.isEmpty()) {
             throw new RuntimeException("Can not create new Order!");
@@ -18,7 +23,7 @@ public class Order {
 
     public void addLine(String name, double price) {
         List<OrderLine> lineList = new ArrayList<>(this.getLines());
-        lineList.add(new OrderLine(name, price));
+        lineList.add(new OrderLine(name, price, this));
         this.setLines(lineList);
     }
 

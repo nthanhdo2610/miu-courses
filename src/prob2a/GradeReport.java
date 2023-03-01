@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class GradeReport {
     private Date reportDate;
+    private Student student;
 
     public GradeReport(Date reportDate, Student student) {
 
@@ -11,6 +12,7 @@ public class GradeReport {
             throw new RuntimeException("Invalid Student!");
         }
         this.reportDate = reportDate;
+        this.student = student;
         student.setGradeReport(this);
     }
 
@@ -19,7 +21,12 @@ public class GradeReport {
             throw new RuntimeException("Invalid Student!");
         }
         this.reportDate = new Date();
+        this.student = student;
         student.setGradeReport(this);
+    }
+
+    public Student getStudent() {
+        return student;
     }
 
     public Date getReportDate() {

@@ -6,15 +6,22 @@ import java.util.UUID;
 public class OrderLine {
     private String name;
     private double price;
+    private Order order;
 
-    OrderLine(String name, double price) {
+    OrderLine(String name, double price, Order order) {
+        if(order == null){
+            throw new RuntimeException("Invalid Order!");
+        }
         this.name = name;
         this.price = price;
+        this.order = order;
     }
 
     public static Order newOrder(String productName, double productPrice) {
-        OrderLine line = new OrderLine(productName, productPrice);
-        return new Order(UUID.randomUUID(), List.of(line));
+        Order order = new Order(UUID.randomUUID());
+        OrderLine line = new OrderLine(productName, productPrice, order);
+        order.setLines(List.of(line));
+        return order;
     }
 
     public String getName() {
@@ -31,6 +38,10 @@ public class OrderLine {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public Order getOrder() {
+        return order;
     }
 
     @Override
