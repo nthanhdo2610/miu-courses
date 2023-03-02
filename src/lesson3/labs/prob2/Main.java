@@ -1,14 +1,14 @@
 package lesson3.labs.prob2;
-import java.util.*;
 
-import lesson3.labsolns.prob2.Apartment;
 import lesson3.labsolns.prob2.Building;
 import lesson3.labsolns.prob2.LandlordInfo;
 
-/** 
+import java.util.Map;
+
+/**
  * Main class is for testing your code; you can uncomment
- * the code here once you have implemented classes. 
- * 
+ * the code here once you have implemented classes.
+ * <p>
  * However, the way
  * data has been populated into the LandlordInfo and Building
  * objects violates the design indicated in the UML diagram for
@@ -16,54 +16,17 @@ import lesson3.labsolns.prob2.LandlordInfo;
  * data is loaded in a correct manner; you can verify that you
  * have done this successfully by moving the Main class into a
  * different package.
- *
  */
 public class Main {
 
-	public static void main(String[] args) {
-//		Apartment[] apts0 = {
-//				new Apartment(600),
-//				new Apartment(700)};
-//		Apartment[] apts1 = {
-//				new Apartment(500), 
-//				new Apartment(450)
-//		};
-//		Apartment[] apts2 = {
-//				new Apartment(1100),
-//				new Apartment(650)};
-//		
-//		Apartment[] apts3 = {
-//				new Apartment(6750), 
-//				new Apartment(945)
-//		};
-//		Building[] bldgs = {
-//				new Building(150, 400),
-//				new Building(175, 900),
-//				new Building(150, 300),
-//				new Building(175, 775)
-//		};
-//		for(Apartment a : apts0) {
-//			bldgs[0].addApartment(a);
-//		}
-//		for(Apartment a : apts1) {
-//			bldgs[1].addApartment(a);
-//		}
-//		for(Apartment a : apts2) {
-//			bldgs[2].addApartment(a);
-//		}
-//		for(Apartment a : apts3) {
-//			bldgs[3].addApartment(a);
-//		}
-//		
-//		LandlordInfo landlord = new LandlordInfo();
-//		for(Building b: bldgs) {
-//			landlord.addBuilding(b);
-//		}
-//		System.out.println(landlord.calcProfits());
-//				
-//		}
+    public static void main(String[] args) {
+        LandlordInfo landlord = LandlordInfo.rent(Map.of("apt01", 600.00, "apt02", 700.00), "bldg0", 400);
+        landlord.addBuilding(new Building("bldg1", 900, Map.of("apt11", 500.00, "apt12", 450.00), landlord));
+        landlord.addBuilding(new Building("bldg2", 300, Map.of("apt21", 1100.00, "apt22", 650.00), landlord));
+        landlord.addBuilding(new Building("bldg3", 775, Map.of("apt31", 6750.00, "apt32", 945.00), landlord));
+        System.out.println(landlord.calcProfits());
+    }
 
-	}
 }
 
 
