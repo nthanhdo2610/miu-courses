@@ -1,5 +1,6 @@
 package lesson4.lab4c;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Commissioned extends Employee {
@@ -7,11 +8,15 @@ public class Commissioned extends Employee {
     private double baseSalary;
     private List<Order> orders;
 
-    public Commissioned(String empId, float commission, double baseSalary, List<Order> orders) {
+    public Commissioned(String empId, float commission, double baseSalary) {
         super(empId);
         this.commission = commission;
         this.baseSalary = baseSalary;
-        this.orders = orders;
+        this.orders = new ArrayList<>();
+    }
+
+    public void addOrder(Order o){
+        orders.add(o);
     }
 
     public float getCommission() {
