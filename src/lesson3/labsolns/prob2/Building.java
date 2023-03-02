@@ -32,10 +32,10 @@ public class Building {
         this.apartments = apartments;
     }
 
-    public double getMonthlyProfit(Date dateOfMont) {
+    double getMonthlyProfit(Date date) {
         double profits = -1 * this.getMaintenanceCost();
         for (Apartment a : this.getApartments()) {
-            if (sdf.format(dateOfMont).equals(sdf.format(a.getRentDate()))) {
+            if (sdf.format(date).equals(sdf.format(a.getRentDate()))) {
                 profits = profits + a.getRentalFee();
             }
         }

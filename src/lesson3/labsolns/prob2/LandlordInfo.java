@@ -1,6 +1,7 @@
 package lesson3.labsolns.prob2;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -31,6 +32,15 @@ public class LandlordInfo {
             }
         }
         return profits;
+    }
+
+    public double getMonthlyProfit(String bldgName, Date date) {
+        for (Building b : this.getBuildings()) {
+            if (b.getName().equals(bldgName)) {
+                return b.getMonthlyProfit(date);
+            }
+        }
+        return 0;
     }
 
     public List<Building> getBuildings() {
