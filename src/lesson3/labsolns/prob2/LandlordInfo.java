@@ -12,7 +12,7 @@ public class LandlordInfo {
         this.buildings = new ArrayList<>();
     }
 
-    public static LandlordInfo rent(Map<String, Double> apts, String bldgName, float maintenanceCost) {
+    public static LandlordInfo rental(Map<String, Double> apts, String bldgName, float maintenanceCost) {
         Building building = new Building(bldgName, maintenanceCost, apts, new LandlordInfo());
         return building.getLandlord();
     }

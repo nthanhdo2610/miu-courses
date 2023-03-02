@@ -20,7 +20,7 @@ import java.util.Map;
 public class Main {
 
     public static void main(String[] args) {
-        LandlordInfo landlord = LandlordInfo.rent(Map.of("apt01", 600.00, "apt02", 700.00), "bldg0", 400);
+        LandlordInfo landlord = LandlordInfo.rental(Map.of("apt01", 600.00, "apt02", 700.00), "bldg0", 400);
         landlord.addBuilding(new Building("bldg1", 900, Map.of("apt11", 500.00, "apt12", 450.00), landlord));
         landlord.addBuilding(new Building("bldg2", 300, Map.of("apt21", 1100.00, "apt22", 650.00), landlord));
         landlord.addBuilding(new Building("bldg3", 775, Map.of("apt31", 6750.00, "apt32", 945.00), landlord));

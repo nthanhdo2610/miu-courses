@@ -1,22 +1,24 @@
 package lesson3.labs.prob3;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Admin {
-	public static double computeTotalRent(Object[] properties) {
-		double totalRent = 0;
-		for (Object o : properties) {
-			if (o instanceof House) {
-				House h = (House) o;
-				totalRent += h.computeRent();
-			}
-			else if (o instanceof Condo) {
-				Condo h = (Condo) o;
-				totalRent += h.computeRent();
-			}
-			else if (o instanceof Trailer) {
-				Trailer h = (Trailer) o;
-				totalRent += h.computeRent();
-			}	
-		}
-		return totalRent;
-	}
+    public static double computeTotalRent(Property[] properties) {
+        double totalRent = 0;
+        for (Property o : properties) {
+            totalRent += o.computeRent();
+        }
+        return totalRent;
+    }
+
+    public static List<Property> getRentalByCity(Property[] properties, String city) {
+        List<Property> list = new ArrayList<>();
+        for (Property p : properties) {
+            if (city.equals(p.getAddress().getCity())) {
+                list.add(p);
+            }
+        }
+        return list;
+    }
 }

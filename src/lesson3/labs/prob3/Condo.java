@@ -1,19 +1,24 @@
 package lesson3.labs.prob3;
 
+public class Condo extends Property {
 
+    private int numberOfFloors;
 
-public class Condo {
-	private Address address;
-	private int numberOfFloors;
-	public Address getAddress() {
-		return address;
-	}
-	public Condo(Address address, int numberOfFloors) {
-		this.address = address;
-		this.numberOfFloors = numberOfFloors;
-	}
+    public Condo(Address address, int numberOfFloors) {
+        super(address);
+        this.numberOfFloors = numberOfFloors;
+    }
 
-	public double computeRent(){
-		return 500 * numberOfFloors;
-	}
+    @Override
+    public double computeRent() {
+        return 400 * numberOfFloors;
+    }
+
+    @Override
+    public String toString() {
+        return "Condo{" +
+                "numberOfFloors=" + numberOfFloors +
+                ", " + super.toString() +
+                '}';
+    }
 }
