@@ -1,9 +1,9 @@
 package lesson3.labs.prob2;
 import java.util.*;
 
-import lesson3.labsolns.prob2.Apartment;
-import lesson3.labsolns.prob2.Building;
-import lesson3.labsolns.prob2.LandlordInfo;
+//import lesson3.labsolns.prob2.Apartment;
+//import lesson3.labsolns.prob2.Building;
+//import lesson3.labsolns.prob2.LandlordInfo;
 
 /** 
  * Main class is for testing your code; you can uncomment
@@ -25,15 +25,15 @@ public class Main {
 //				new Apartment(600),
 //				new Apartment(700)};
 //		Apartment[] apts1 = {
-//				new Apartment(500), 
+//				new Apartment(500),
 //				new Apartment(450)
 //		};
 //		Apartment[] apts2 = {
 //				new Apartment(1100),
 //				new Apartment(650)};
-//		
+//
 //		Apartment[] apts3 = {
-//				new Apartment(6750), 
+//				new Apartment(6750),
 //				new Apartment(945)
 //		};
 //		Building[] bldgs = {
@@ -54,13 +54,13 @@ public class Main {
 //		for(Apartment a : apts3) {
 //			bldgs[3].addApartment(a);
 //		}
-//		
+//
 //		LandlordInfo landlord = new LandlordInfo();
 //		for(Building b: bldgs) {
 //			landlord.addBuilding(b);
 //		}
 //		System.out.println(landlord.calcProfits());
-//				
+//
 //		}
 
 	}
