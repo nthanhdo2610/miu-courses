@@ -1,12 +1,10 @@
 package lesson5.lab5.prob1.rulesets;
 
-import javax.swing.JTextField;
-
 public class RuleUtil {
 
-    static void nonempty(JTextField[] textFields) throws RuleException{
-        for (JTextField f : textFields) {
-            if (f.getText().isBlank()) {
+    static void nonempty(String[] textFields) throws RuleException {
+        for (String s : textFields) {
+            if (s.isBlank()) {
                 throw new RuleException("All fields must be nonempty");
             }
         }

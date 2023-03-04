@@ -7,16 +7,13 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.BorderLayout;
-import java.awt.Component;
 import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class BookWindow extends JFrame {
+public class BookWindow extends JFrame implements IWindow {
     private JPanel topPanel;
     private JPanel bottomPanel;
     private JButton button;
@@ -37,23 +34,23 @@ public class BookWindow extends JFrame {
         pack();
     }
 
-    private void defineTopPanel() {
+    public void defineTopPanel() {
         topPanel = new JPanel();
         JLabel isbnLabel = new JLabel("ISBN");
-        isbnLabel.setFont(makeSmallFont(isbnLabel.getFont()));
+        isbnLabel.setFont(WindowUtil.makeSmallFont(isbnLabel.getFont()));
         isbnField = new JTextField(12);
-        JPanel isbnPanel = createTextPanel(isbnLabel, isbnField);
+        JPanel isbnPanel = WindowUtil.createTextPanel(isbnLabel, isbnField);
 
 
         JLabel titleLabel = new JLabel("Title");
-        titleLabel.setFont(makeSmallFont(titleLabel.getFont()));
+        titleLabel.setFont(WindowUtil.makeSmallFont(titleLabel.getFont()));
         titleField = new JTextField(12);
-        JPanel titlePanel = createTextPanel(titleLabel, titleField);
+        JPanel titlePanel = WindowUtil.createTextPanel(titleLabel, titleField);
 
         JLabel priceLabel = new JLabel("Price");
-        priceLabel.setFont(makeSmallFont(priceLabel.getFont()));
+        priceLabel.setFont(WindowUtil.makeSmallFont(priceLabel.getFont()));
         priceField = new JTextField(12);
-        JPanel pricePanel = createTextPanel(priceLabel, priceField);
+        JPanel pricePanel = WindowUtil.createTextPanel(priceLabel, priceField);
 
 
         topPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
@@ -63,7 +60,7 @@ public class BookWindow extends JFrame {
 
     }
 
-    private void defineBottomPanel() {
+     public void defineBottomPanel() {
         bottomPanel = new JPanel();
         bottomPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
         button = new JButton("Update Info");
@@ -72,37 +69,15 @@ public class BookWindow extends JFrame {
 
     }
 
-    private static JPanel createTextPanel(JLabel lab, JTextField textField) {
-
-        JPanel top = new JPanel();
-        JPanel bottom = new JPanel();
-        top.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 0));
-        bottom.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 0));
-
-
-        top.add(lab);
-        bottom.add(textField);
-
-        JPanel textPanel = new JPanel();
-        textPanel.setLayout(new BorderLayout());
-        textPanel.add(top, BorderLayout.NORTH);
-        textPanel.add(bottom, BorderLayout.CENTER);
-        return textPanel;
-    }
-
-    private void initializeWindow() {
+    public void initializeWindow() {
         setTitle("Add Book to Collection");
         setSize(520, 180);
         handleWindowClosing();
-        centerFrameOnDesktop(this);
+        WindowUtil.centerFrameOnDesktop(this);
         setResizable(false);
     }
 
-    public static Font makeSmallFont(Font f) {
-        return new Font(f.getName(), f.getStyle(), (f.getSize() - 2));
-    }
-
-    private void handleWindowClosing() {
+    public void handleWindowClosing() {
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent w) {
                 dispose();
@@ -112,7 +87,7 @@ public class BookWindow extends JFrame {
         });
     }
 
-    private void clearFields() {
+    public void clearTextFieldList() {
         isbnField.setText("");
         titleField.setText("");
         priceField.setText("");
@@ -128,16 +103,6 @@ public class BookWindow extends JFrame {
         public void actionPerformed(ActionEvent evt) {
 
         }
-    }
-
-    public static void centerFrameOnDesktop(Component f) {
-        final int SHIFT_AMOUNT = 0;
-        Toolkit toolkit = Toolkit.getDefaultToolkit();
-        int height = toolkit.getScreenSize().height;
-        int width = toolkit.getScreenSize().width;
-        int frameHeight = f.getSize().height;
-        int frameWidth = f.getSize().width;
-        f.setLocation(((width - frameWidth) / 2) - SHIFT_AMOUNT, (height - frameHeight) / 3);
     }
 
     public String getIsbnValue() {
@@ -158,7 +123,7 @@ public class BookWindow extends JFrame {
         mf.setVisible(true);
     }
 
-    public JTextField[] textFieldList() {
-        return new JTextField[]{this.isbnField, this.titleField, this.priceField};
+    public String[] getTextFieldList() {
+        return new String[]{this.isbnField.getText(), this.titleField.getText(), this.priceField.getText()};
     }
 }

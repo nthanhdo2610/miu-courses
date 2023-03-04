@@ -3,7 +3,6 @@ package lesson5.lab5.prob1.rulesets;
 import lesson5.lab5.prob1.gui.CDWindow;
 
 import java.awt.Component;
-import java.util.logging.Logger;
 
 /**
  * Rules:
@@ -14,12 +13,10 @@ import java.util.logging.Logger;
 
 public class CDRuleSet implements RuleSet {
 
-    private static final Logger LOGGER = Logger.getLogger(CDRuleSet.class.getName());
-
     @Override
     public void applyRules(Component ob) throws RuleException {
         CDWindow cdWindow = (CDWindow) ob;
-        RuleUtil.nonempty(cdWindow.textFieldList());
+        RuleUtil.nonempty(cdWindow.getTextFieldList());
         RuleUtil.validatePrice(cdWindow.getPriceValue());
     }
 }

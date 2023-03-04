@@ -3,7 +3,6 @@ package lesson5.lab5.prob1.rulesets;
 import lesson5.lab5.prob1.gui.BookWindow;
 
 import java.awt.Component;
-import java.util.logging.Logger;
 
 /**
  * Rules:
@@ -16,12 +15,10 @@ import java.util.logging.Logger;
  */
 public class BookRuleSet implements RuleSet {
 
-    private static final Logger LOGGER = Logger.getLogger(BookRuleSet.class.getName());
-
     @Override
     public void applyRules(Component ob) throws RuleException {
         BookWindow bookWindow = (BookWindow) ob;
-        RuleUtil.nonempty(bookWindow.textFieldList());
+        RuleUtil.nonempty(bookWindow.getTextFieldList());
         RuleUtil.validateIsbn(bookWindow.getIsbnValue());
         RuleUtil.validatePrice(bookWindow.getPriceValue());
     }
