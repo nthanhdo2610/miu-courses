@@ -157,4 +157,8 @@ public class BookWindow extends JFrame {
         //mf.pack();
         mf.setVisible(true);
     }
+
+    public JTextField[] textFieldList() {
+        return new JTextField[]{this.isbnField, this.titleField, this.priceField};
+    }
 }

@@ -1,6 +1,9 @@
 package lesson5.lab5.prob1.rulesets;
 
+import lesson5.lab5.prob1.gui.BookWindow;
+
 import java.awt.Component;
+import java.util.logging.Logger;
 
 /**
  * Rules:
@@ -8,16 +11,19 @@ import java.awt.Component;
  * 2. Isbn must be numeric and consist of either 10 or 13 characters
  * 3. If Isbn has length 10, the first digit must be 0 or 1
  * 4. If Isbn has length 13, the first 3 digits must be either 978 or 979
- * 5. Price must be a floating point number with two decimal places 
+ * 5. Price must be a floating point number with two decimal places
  * 6. Price must be a number greater than 0.49.
- *
  */
 public class BookRuleSet implements RuleSet {
 
-	@Override
-	public void applyRules(Component ob) throws RuleException {
-		// TODO Auto-generated method stub
-		
-	}
+    private static final Logger LOGGER = Logger.getLogger(BookRuleSet.class.getName());
+
+    @Override
+    public void applyRules(Component ob) throws RuleException {
+        BookWindow bookWindow = (BookWindow) ob;
+        RuleUtil.nonempty(bookWindow.textFieldList());
+        RuleUtil.validateIsbn(bookWindow.getIsbnValue());
+        RuleUtil.validatePrice(bookWindow.getPriceValue());
+    }
 
 }
