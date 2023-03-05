@@ -1,5 +1,9 @@
 package lesson5.lab5.prob1.gui;
 
+import lesson5.lab5.prob1.rulesets.RuleException;
+import lesson5.lab5.prob1.rulesets.RuleSet;
+import lesson5.lab5.prob1.rulesets.RuleSetFactory;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -95,7 +99,19 @@ public class BookWindow extends JFrame implements IWindow {
 
     class ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent evt) {
-            JOptionPane.showMessageDialog(BookWindow.this, "Still need to check book rules!");
+            StringBuilder builder = new StringBuilder(System.getProperty("line.separator"));
+            try {
+                RuleSet rules = RuleSetFactory.getRuleSet(BookWindow.this);
+                rules.applyRules(BookWindow.this);
+                for(String text : getTextFieldList()){
+                    builder.append(text);
+                }
+                System.out.println(builder);
+                clearTextFieldList();
+            } catch(RuleException e) {
+                JOptionPane.showMessageDialog(BookWindow.this, e.getMessage());
+
+            }
         }
     }
 

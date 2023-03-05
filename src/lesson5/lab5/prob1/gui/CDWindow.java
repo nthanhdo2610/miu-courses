@@ -1,5 +1,9 @@
 package lesson5.lab5.prob1.gui;
 
+import lesson5.lab5.prob1.rulesets.RuleException;
+import lesson5.lab5.prob1.rulesets.RuleSet;
+import lesson5.lab5.prob1.rulesets.RuleSetFactory;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -92,7 +96,19 @@ public class CDWindow extends JFrame implements IWindow {
 
     class ButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent evt) {
-            JOptionPane.showMessageDialog(CDWindow.this, "Still need to check CD rules!");
+            StringBuilder builder = new StringBuilder(System.getProperty("line.separator"));
+            try {
+                RuleSet rules = RuleSetFactory.getRuleSet(CDWindow.this);
+                rules.applyRules(CDWindow.this);
+                for(String text : getTextFieldList()){
+                    builder.append(text);
+                }
+                System.out.println(builder);
+                clearTextFieldList();
+            } catch(RuleException e) {
+                JOptionPane.showMessageDialog(CDWindow.this, e.getMessage());
+
+            }
         }
     }
 
