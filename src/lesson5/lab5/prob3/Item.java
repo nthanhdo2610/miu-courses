@@ -1,8 +1,8 @@
 package lesson5.lab5.prob3;
 
 public class Item {
-	String name;
-	public Item(String name) {
+	private String name;
+	Item(String name) {
 		this.name = name;
 	}
 	public String getName() {

@@ -12,9 +12,9 @@ public class Order {
 	//use a factory method
 	private Order(LocalDate orderDate) {
 		this.orderDate = orderDate;
-		items = new ArrayList<Item>();	
+		items = new ArrayList<>();
 	}
-	public static Order newOrder(Customer cust, LocalDate date) {
+	static Order newOrder(Customer cust, LocalDate date) {
 		if(cust == null) throw new NullPointerException("Null customer");
 		Order ord = new Order(date);
 		cust.addOrder(ord);
