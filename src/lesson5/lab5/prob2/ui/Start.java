@@ -1,5 +1,11 @@
 package lesson5.lab5.prob2.ui;
 
+import lesson5.lab5.prob2.control.Control;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -7,13 +13,6 @@ import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Toolkit;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
-import lesson5.lab5.prob2.control.Control;
 
 public class Start extends JFrame {
 	private JPanel topPanel;
@@ -60,7 +59,10 @@ public class Start extends JFrame {
 		login.setPreferredSize(teacherRmks.getPreferredSize());
 		logout.setPreferredSize(teacherRmks.getPreferredSize());
 		gradeReport.setPreferredSize(teacherRmks.getPreferredSize());
-		logout.addActionListener(evt -> messageBar.setText("Logout successful"));
+		logout.addActionListener(evt -> {
+			Control.INSTANCE.setLoggedIn(false);
+			messageBar.setText("Logout successful");
+		});
 		login.addActionListener(Control.INSTANCE.getLoginListener());
 		gradeReport.addActionListener(Control.INSTANCE.getGradesListener());
 		teacherRmks.addActionListener(Control.INSTANCE.getRemarksListener());

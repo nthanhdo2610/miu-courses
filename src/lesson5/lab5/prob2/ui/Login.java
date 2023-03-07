@@ -1,12 +1,7 @@
 package lesson5.lab5.prob2.ui;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.EventQueue;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.Toolkit;
+import lesson5.lab5.prob2.control.Control;
+import lesson5.lab5.prob2.control.UI;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,8 +9,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-
-import lesson5.lab5.prob2.control.Control;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.EventQueue;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.Toolkit;
 
 @SuppressWarnings("serial")
 public class Login extends JFrame {
@@ -26,6 +26,16 @@ public class Login extends JFrame {
 	private JTextArea gradesData;
 	private JTextField userText;
 	private JTextField pwdText;
+	private UI previous = UI.START;
+
+	public UI getPrevious() {
+		return previous;
+	}
+
+	public void setPrevious(UI previous) {
+		this.previous = previous;
+	}
+
 	public void setMessage(String s) {
 		label.setText(s);
 	}
