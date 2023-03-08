@@ -1,4 +1,4 @@
-package lesson6.lab6;
+package lesson6.lab6.model;
 
 import javax.swing.JComponent;
 import java.awt.Color;

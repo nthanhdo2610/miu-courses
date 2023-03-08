@@ -11,13 +11,14 @@ import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
 
-public class SplitPaneDemo  extends JFrame {
+public class SplitPaneDemo extends JFrame {
     JPanel cardDeck;
     JPanel firstPanel;
     JPanel secondPanel;
     JPanel thirdPanel;
     JList<String> nameList;
     JSplitPane splitPane;
+
     SplitPaneDemo() {
         initializeWindow();
         setUpCards();
@@ -32,6 +33,7 @@ public class SplitPaneDemo  extends JFrame {
         setSize(500, 450);
         centreOnDesktop(this);
     }
+
     private void centreOnDesktop(Component component) {
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         component.setLocation(
@@ -39,10 +41,12 @@ public class SplitPaneDemo  extends JFrame {
                 (toolkit.getScreenSize().height - component.getHeight()) / 2
         );
     }
+
     private void setUpLists() {
         nameList = new JList<>(new String[]{"first", "second", "third"});
-        nameList.addListSelectionListener(e -> ((CardLayout)(cardDeck.getLayout())).show(cardDeck, nameList.getSelectedValue()));
+        nameList.addListSelectionListener(e -> ((CardLayout) (cardDeck.getLayout())).show(cardDeck, nameList.getSelectedValue()));
     }
+
     private void setUpCards() {
         cardDeck = new JPanel();
         //set its layout as CardLayout
@@ -58,10 +62,12 @@ public class SplitPaneDemo  extends JFrame {
         cardDeck.add("second", secondPanel);
         cardDeck.add("third", thirdPanel);
     }
+
     private void initializeWindow() {
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
+
     public static void main(String[] args) {
         EventQueue.invokeLater(SplitPaneDemo::new);
     }

@@ -1,4 +1,4 @@
-package lesson6.lab6;
+package lesson6.lab6.model;
 
 public class User {
 	public User(String username, String pwd, Auth auth) {

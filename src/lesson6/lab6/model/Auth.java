@@ -1,4 +1,4 @@
-package lesson6.lab6;
+package lesson6.lab6.model;
 
 import java.io.Serializable;
 
