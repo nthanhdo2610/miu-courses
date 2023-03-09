@@ -72,14 +72,14 @@ public class BookingClub extends JFrame {
         this.linkList.addListSelectionListener((event) -> {
             this.message.setText("");
             String item = linkList.getSelectedValue();
-            selectMenu(item);
-//            if (authMenu(controller.getUser().getAuthorization()).contains(item)) {
-//                currentMenu = Map.entry(linkList.getLeadSelectionIndex(), item);
-//                selectMenu(item);
-//            } else {
-//                linkList.setSelectedIndex(currentMenu.getKey());
-//                selectMenu(currentMenu.getValue());
-//            }
+//            selectMenu(item);
+            if (authMenu(controller.getUser().getAuthorization()).contains(item)) {
+                currentMenu = Map.entry(linkList.getLeadSelectionIndex(), item);
+                selectMenu(item);
+            } else {
+                linkList.setSelectedIndex(currentMenu.getKey());
+                selectMenu(currentMenu.getValue());
+            }
         });
     }
 

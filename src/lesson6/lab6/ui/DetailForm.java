@@ -9,9 +9,9 @@ public class DetailForm {
 
     private JPanel detailPanel;
     private JTextArea titleTxtArea;
-    private final BookingClubController controller = BookingClubController.INSTANCE;
 
     public DetailForm() {
+        BookingClubController controller = BookingClubController.INSTANCE;
         controller.setDetailForm(this);
     }
 
