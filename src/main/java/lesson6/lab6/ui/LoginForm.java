@@ -12,11 +12,11 @@ public class LoginForm {
     private JTextField txtUsername;
     private JPasswordField txtPassword;
     private JPanel loginPanel;
-    private JButton signInButton;
+    private JButton btnLogin;
     private final BookingClubController controller = BookingClubController.INSTANCE;
 
     public LoginForm() {
-        signInButton.addActionListener(e -> {
+        btnLogin.addActionListener(e -> {
             String username = txtUsername.getText().trim();
             char[] password = txtPassword.getPassword();
             if(username.isBlank() || password == null){

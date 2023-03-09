@@ -8,7 +8,7 @@ import javax.swing.JTextArea;
 public class DetailForm {
 
     private JPanel detailPanel;
-    private JTextArea titleTxtArea;
+    private JTextArea areTitle;
 
     public DetailForm() {
         BookingClubController controller = BookingClubController.INSTANCE;
@@ -20,6 +20,6 @@ public class DetailForm {
     }
 
     public void setTitleTxtArea(String text) {
-        this.titleTxtArea.setText(text);
+        this.areTitle.setText(text);
     }
 }
