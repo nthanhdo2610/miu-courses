@@ -23,7 +23,7 @@ public class Data {
     private final static String GARDEN_OF_RAMA = "Garden of Rama";
 	
     
-    public static List<String> bookTitles = new ArrayList<>() {
+    public List<String> bookTitles = new ArrayList<>() {
 
         {
             add(MESSIAH_OF_DUNE);
@@ -32,7 +32,7 @@ public class Data {
         }
     };
     
-    public static void addBookTitle(String title) {
+    public void addBookTitle(String title) {
     	bookTitles.add(title);
     }
     

@@ -20,7 +20,7 @@ public class LoginForm {
             String username = txtUsername.getText().trim();
             char[] password = txtPassword.getPassword();
             if(username.isBlank() || password == null){
-                controller.getBookingClub().error("Id and Password fields must be nonempty");
+                controller.error("Id and Password fields must be nonempty");
                 return;
             }
             controller.doLogin(username, new String(password));
@@ -31,7 +31,4 @@ public class LoginForm {
         return loginPanel;
     }
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-    }
 }

@@ -37,7 +37,7 @@ public class BookingClub extends JFrame {
     JPanel cardDeck;
     JList<String> linkList;
     JSplitPane splitPane;
-    JLabel message = new JLabel("Welcome!");
+    JLabel message = new JLabel("Welcome to the Book Club!");
     Map.Entry<Integer, String> currentMenu = Map.entry(0, LOGIN_MENU);
     JPanel footer;
     BookingClubController controller;
@@ -72,13 +72,14 @@ public class BookingClub extends JFrame {
         this.linkList.addListSelectionListener((event) -> {
             this.message.setText("");
             String item = linkList.getSelectedValue();
-            if (authMenu(controller.getUser().getAuthorization()).contains(item)) {
-                currentMenu = Map.entry(linkList.getLeadSelectionIndex(), item);
-                selectMenu(item);
-            } else {
-                linkList.setSelectedIndex(currentMenu.getKey());
-                selectMenu(currentMenu.getValue());
-            }
+            selectMenu(item);
+//            if (authMenu(controller.getUser().getAuthorization()).contains(item)) {
+//                currentMenu = Map.entry(linkList.getLeadSelectionIndex(), item);
+//                selectMenu(item);
+//            } else {
+//                linkList.setSelectedIndex(currentMenu.getKey());
+//                selectMenu(currentMenu.getValue());
+//            }
         });
     }
 
@@ -117,7 +118,7 @@ public class BookingClub extends JFrame {
 
     private void initFooter() {
         this.footer = new JPanel();
-        this.message.setForeground(Color.GREEN.darker().darker());
+        this.message.setForeground(Util.DARK_BLUE);
         this.message.setFont(new Font("Tahoma", Font.BOLD, 14));
         this.footer.add(message);
         this.footer.setLayout(new FlowLayout(FlowLayout.LEFT));
@@ -136,6 +137,7 @@ public class BookingClub extends JFrame {
 
     public void auth(Auth role) {
         this.linkList.setCellRenderer(this.renderLeftMenuList(role));
+        this.updateCards();
     }
 
     private void centreOnDesktop(Component component) {
@@ -152,8 +154,11 @@ public class BookingClub extends JFrame {
         cardDeck.add(new DetailForm().getContent(), TITLES_MENU);
         cardDeck.add(new AddBookForm().getContent(), ADD_BOOK_MENU);
     }
+    private void updateCards() {
 
-    private void selectMenu(String name) {
+    }
+
+    public void selectMenu(String name) {
         CardLayout cl = (CardLayout) (cardDeck.getLayout());
         cl.show(this.cardDeck, name);
     }
