@@ -7,9 +7,9 @@ public class MyClass implements Intface3 {
     }
 
     //a
-//    public static void main(String[] args) {
-//        new MyClass().aMethod(10);
-//    }
+    public static void main(String[] args) {
+        new MyClass().aMethod(10);
+    }
     //b
 
 }
