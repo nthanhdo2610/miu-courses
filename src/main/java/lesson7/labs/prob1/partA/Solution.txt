@@ -1,0 +1,3 @@
+Method validate contains of List<Employee>
+is using the original method Object.equals()
+but class Employee does not override method equals()

@@ -1,0 +1,8 @@
+class Employee override method hashCode() and equals()
+Its dependent on value visited
+HashMap tracker sets both key, value
+by the same object Employee
+and during the method removeDuplicates running
+tracker get and update the value of visited
+that means the key and value of Node above have been updated
+so the results of removeDuplicates() incorrect

@@ -1,5 +1,7 @@
 package lesson7.labs.prob1.partA;
 
+import java.util.Objects;
+
 public class Employee {
 	private String name;
 	private int salary;
@@ -24,7 +26,7 @@ public class Employee {
 	public String toString() {
 		return "(" + name + ", " + salary + ")";
 	}
-	
+
 	public boolean equals(Employee e) {
 		return e.name.equals(name) && e.salary == salary;
 	}
@@ -32,4 +34,17 @@ public class Employee {
 //		Employee e = (Employee)ob;
 //		return e.name.equals(name) && e.salary == salary;
 //	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Employee employee = (Employee) o;
+		return salary == employee.salary && Objects.equals(name, employee.name);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(name, salary);
+	}
 }

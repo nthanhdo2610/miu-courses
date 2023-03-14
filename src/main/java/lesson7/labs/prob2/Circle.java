@@ -1,8 +1,13 @@
 package lesson7.labs.prob2;
 
-public final class Circle implements ClosedCurve {
+public final class Circle implements Polygon {
 	final private double radius;
-	
+
+	@Override
+	public double[] getSides() {
+		return new double[]{radius};
+	}
+
 	@Override
 	public double computePerimeter() {
 		return 2 * Math.PI * radius; 
