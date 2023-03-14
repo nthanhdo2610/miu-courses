@@ -1,0 +1,7 @@
+When the type D is a class:
+the method() must be fully implement or abstract
+
+When the type D is an interface:
+the method() must be signature by default in fully implement
+or abstract
+

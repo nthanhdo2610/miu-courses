@@ -1,8 +1,7 @@
 package lesson8.lecture.comparator2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class EmployeeInfo {
@@ -12,14 +11,29 @@ public class EmployeeInfo {
 	public EmployeeInfo(SortMethod method) {
 		this.method = method;
 	}
+
+	class EmployeeComparator implements Comparator<Employee> {
+		@Override
+		public int compare(Employee e1, Employee e2) {
+			if (method == SortMethod.BYNAME) {
+				return e1.name.compareTo(e2.name);
+			} else {
+				if (e1.salary == e2.salary) return 0;
+				else if (e1.salary < e2.salary) return -1;
+				else return 1;
+			}
+		}
+	}
 	//Comparators are unaware of the value in method
 	public void sort(List<Employee> emps) {
-		if(method == SortMethod.BYNAME) {
-			Collections.sort(emps, new EmployeeNameComparator());
-		}
-		else if(method == SortMethod.BYSALARY) {
-			Collections.sort(emps, new EmployeeSalaryComparator());
-		}
+			Collections.sort(emps, new EmployeeComparator());
+
+//		if(method == SortMethod.BYNAME) {
+//			Collections.sort(emps, new EmployeeNameComparator());
+//		}
+//		else if(method == SortMethod.BYSALARY) {
+//			Collections.sort(emps, new EmployeeSalaryComparator());
+//		}
 	}
 	public static void main(String[] args) {
 		Employee joe1 = new Employee("Joe", 150000);
