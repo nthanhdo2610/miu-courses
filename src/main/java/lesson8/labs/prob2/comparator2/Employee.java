@@ -1,5 +1,7 @@
 package lesson8.labs.prob2.comparator2;
 
+import java.util.Objects;
+
 public class Employee {
 	String name;
 	int salary;
@@ -24,6 +26,11 @@ public class Employee {
 		if(ob.getClass() != getClass()) return false;
 		Employee e = (Employee)ob;
 		return e.name.equals(name) && e.salary==salary;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(name, salary);
 	}
 }
 

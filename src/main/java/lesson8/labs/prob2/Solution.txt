@@ -1,0 +1,3 @@
+two Employee objects having the same name but that should not be considered equal:
+"   JOE " and "Joe"
+rewrite using name.trim().toUpperCase() to compare name of two Employee objects
