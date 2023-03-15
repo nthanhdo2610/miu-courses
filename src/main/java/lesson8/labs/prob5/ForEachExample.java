@@ -13,7 +13,14 @@ public class ForEachExample {
 		
 		//print each element of the list in upper case format
 		list.forEach(MyClass.INSTANCE);
-		
+
+		//Use a lambda expression instead of directly defining a Consumer
+		Consumer<String> consumerA = (String s) -> System.out.println(toUpper(s));
+		list.forEach(s->consumerA.accept(s));
+
+		//Use a method reference in place of your lambda expression in part a
+		list.forEach(consumerA);
+
 	}
 	
 	public static String toUpper(String s) {
