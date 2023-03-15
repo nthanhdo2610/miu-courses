@@ -2,7 +2,7 @@ package lesson8.labs.prob1;
 
 import java.util.function.Supplier;
 
-public class Solution {
+public class SolutionB {
 
     public static void main(String[] args) {
         Supplier<Double> prob1B = Math::random;

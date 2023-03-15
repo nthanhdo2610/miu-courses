@@ -1,0 +1,24 @@
+i. Runnable  r = () ->
+    {
+    int[][] products = new int[s][t];
+        for (int i = 0; i < s; i++) {
+            for(int j = i + 1; j < t; j++) {
+              products[i][j] = i * j;
+        }
+    }
+}
+There are no parameters.
+Free variables: s, t.
+
+
+
+ii.Comparator<String> comp = (s, t) ->
+  {
+     if(ignoreCase == true)	{
+	    return s.compareToIgnoreCase(t);
+    }  else {
+       return s.compareTo(t);
+    }
+}
+Parameters: s, t
+Free variables: ignoreCase
