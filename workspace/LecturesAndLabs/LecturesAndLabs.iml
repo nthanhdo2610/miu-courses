@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="EclipseModuleManager">
-    <libelement value="file:///Users/bright/Documents/MPP/workspace/jars/derbyclient.jar" />
-    <libelement value="file:///Users/bright/Documents/MPP/workspace/jars/logsetup.jar" />
-    <libelement value="file:///Users/bright/Documents/MPP/workspace/jars/dataaccess.jar" />
-    <libelement value="file:///Users/bright/Downloads/FPP/workspace/jars/mysql-connector-java-5.1.20-bin.jar" />
+    <libelement value="jar://$MODULE_DIR$/../jars/derbyclient.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/../jars/logsetup.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/../jars/dataaccess.jar!/" />
+    <libelement value="jar://$USER_HOME$/Downloads/FPP/workspace/jars/mysql-connector-java-5.1.20-bin.jar!/" />
     <src_description expected_position="0">
       <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
     </src_description>
@@ -19,7 +19,7 @@
     <orderEntry type="module-library">
       <library name="derbyclient.jar">
         <CLASSES>
-          <root url="file:///Users/bright/Documents/MPP/workspace/jars/derbyclient.jar" />
+          <root url="jar://$MODULE_DIR$/../jars/derbyclient.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -28,7 +28,7 @@
     <orderEntry type="module-library">
       <library name="logsetup.jar">
         <CLASSES>
-          <root url="file:///Users/bright/Documents/MPP/workspace/jars/logsetup.jar" />
+          <root url="jar://$MODULE_DIR$/../jars/logsetup.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -37,7 +37,7 @@
     <orderEntry type="module-library">
       <library name="dataaccess.jar">
         <CLASSES>
-          <root url="file:///Users/bright/Documents/MPP/workspace/jars/dataaccess.jar" />
+          <root url="jar://$MODULE_DIR$/../jars/dataaccess.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
@@ -48,7 +48,7 @@
     <orderEntry type="module-library">
       <library name="mysql-connector-java-5.1.20-bin.jar">
         <CLASSES>
-          <root url="file:///Users/bright/Downloads/FPP/workspace/jars/mysql-connector-java-5.1.20-bin.jar" />
+          <root url="jar://$USER_HOME$/Downloads/FPP/workspace/jars/mysql-connector-java-5.1.20-bin.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -1,4 +1,4 @@
-package lesson8.lecture.comparator2;
+package lesson8.labs.prob2.comparator2;
 
 import java.util.Collections;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 public class EmployeeInfo {
 	static enum SortMethod {BYNAME, BYSALARY};
 	private SortMethod method;
-	
+
 	public EmployeeInfo(SortMethod method) {
 		this.method = method;
 	}
@@ -22,16 +22,15 @@ public class EmployeeInfo {
 	public static void main(String[] args) {
 		Employee joe1 = new Employee("Joe", 150000);
 		Employee joe2 = new Employee("Joe", 100000);
-		
+
 		System.out.println(joe1.equals(joe2));
-		
+
 		EmployeeNameComparator nameComp = new EmployeeNameComparator();
 		System.out.println(nameComp.compare(joe1, joe2));
-		
+
 	}
 }
 
-	
 //	public static void main(String[] args) {
 //		List<Employee> emps = new ArrayList<>();
 //		emps.add(new Employee("Joe", 100000));
