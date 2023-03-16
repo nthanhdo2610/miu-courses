@@ -1,6 +1,7 @@
 package lesson9.labs.prob2;
 import java.time.LocalDate;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 	List<Order> orders;
@@ -15,6 +16,9 @@ public class Main {
 	private void showAllOrderItems() {
 		System.out.println("\n==============\nAll order items:");
 		//implement
+		orders.stream()
+				.flatMap(o-> o.getOrderItems().stream())
+				.forEach(System.out::println);
 	}
 	
 	private void displayAllOrders() {
