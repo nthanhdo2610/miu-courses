@@ -1,9 +1,7 @@
 package lesson9.labs.prob11a;
 
-import java.util.*;
-
-import old.lesson9.labsolns.prob7b.Employee;
-import old.lesson9.labsolns.prob7b.TriFunction;
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
