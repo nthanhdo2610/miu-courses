@@ -28,10 +28,7 @@ public class Main {
 		System.out.println(
 				/* implement */
 				list.stream()
-						.sorted(
-								Comparator
-										.comparingInt((ToIntFunction<Integer>) Math::abs)
-										.thenComparing(Integer::intValue))
+						.sorted(Comparator.comparingInt((ToIntFunction<Integer>) Math::abs).thenComparing(Integer::intValue))
 						.collect(Collectors.toList())
 		);
 		
@@ -54,10 +51,12 @@ public class Main {
 
 		System.out.println(
 				/* implement */
+				//expected output: [cba, fie, doe, efg, set]'
 				words.stream()
-						.collect(Collectors.toMap(String::toString, reverse))
+						.map(reverse)
+						.sorted()
+						.map(reverse)
+						.collect(Collectors.toList()));
 
-		);
-				
 	}
 }
