@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="file:///Users/bright/Documents/MPP/setup/jars/junit-4.8.1.jar" />
+    <libelement value="file:///Users/bright/Documents/MPP/setup/jars/logsetup.jar" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/../workspace/InClassExercises/src" expected_position="0" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../workspace/InClassExercises/bin" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../workspace/InClassExercises">
+      <sourceFolder url="file://$MODULE_DIR$/../workspace/InClassExercises/src" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="junit4">
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/junit4.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="JavaFX19" level="project" />
+    <orderEntry type="module-library">
+      <library name="junit-4.8.1.jar">
+        <CLASSES>
+          <root url="file:///Users/bright/Documents/MPP/setup/jars/junit-4.8.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="logsetup.jar">
+        <CLASSES>
+          <root url="file:///Users/bright/Documents/MPP/setup/jars/logsetup.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="inheritedJdk" />
+  </component>
+</module>

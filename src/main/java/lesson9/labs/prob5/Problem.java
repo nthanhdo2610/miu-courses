@@ -1,13 +1,18 @@
 package lesson9.labs.prob5;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Problem {
 	
 	//Returns a list of those strings which belong to both of the two input lists
 	public static List<String> elementsInBoth(List<String> list1, List<String> list2) {
 		//implement
-		return null;
+		return Stream.concat(list1.stream(), list2.stream())
+				.filter(s-> list1.contains(s) && list2.contains(s))
+				.distinct()
+				.collect(Collectors.toList());
 	}
 	
 	//Returns a list, in sorted order, of the zipcodes, of those Customers 
@@ -16,7 +21,12 @@ public class Problem {
 	//duplicate elements.
 	public static List<String> getZipsOfSpecialCustomers(List<Customer> list) {
 		//implement
-		return null;
+		return list.stream()
+				.filter(customer -> customer.getCity().length() >= 6 && !customer.getCity().contains("e"))
+				.map(Customer::getZip)
+				.sorted()
+				.distinct()
+				.collect(Collectors.toList());
 	}
 	
 	
@@ -27,8 +37,8 @@ public class Problem {
 	}
 	//expected output: [tree, bike]
 	private static void testFirstMethod() {
-		List<String> list1 = Arrays.asList(new String[]{"friend", "tree", "bike", "bat"});
-		List<String> list2 = Arrays.asList(new String[]{"tree", "strong", "bike", "weak"});
+		List<String> list1 = Arrays.asList("friend", "tree", "bike", "bat");
+		List<String> list2 = Arrays.asList("tree", "strong", "bike", "weak");
 		System.out.println("Strings occurring in both lists: " + elementsInBoth(list1, list2));
 	}
 	//expected output: [54672, 57532] 
