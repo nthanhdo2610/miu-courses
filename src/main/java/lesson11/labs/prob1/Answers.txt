@@ -3,11 +3,11 @@ Consider the following code fragments. For each, if there is a compiler error, i
         List<Integer> ints = new ArrayList<>();
         ints.add(1);
         ints.add(2);
-        List<Number> nums = ints; // -> compiler error this line
+        List<Number> nums = ints; // -> compiler error conflict data type this line
         nums.add(3.14);
     b. Second fragment:
         List<Integer> ints = new ArrayList<>();
         ints.add(1);
         ints.add(2);
         List<? extends Number> nums = ints;
-        nums.add(3.14); // -> compiler error this line
+        nums.add(3.14); // -> compiler error conflict data type this line
