@@ -11,8 +11,7 @@ public class Or {
 	}
 
 	public boolean someSimpleIsTrue(List<Simple> list) {
-		return list.stream()
-				.reduce(new Simple(false), (s1, s2) -> s2.flag ? s2 : s1).flag;
+		return list.stream().reduce(new Simple(false), (s1, s2) -> s2.flag ? s2 : s1).flag;
 //		boolean accum = false;
 //		for(Simple s: list) {
 //			accum = accum || s.flag;
