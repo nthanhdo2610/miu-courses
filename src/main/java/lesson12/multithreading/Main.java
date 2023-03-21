@@ -1,25 +1,34 @@
 package lesson12.multithreading;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
+
 public class Main {
 
-    public static void main(String[] args) {
-//        System.out.println("main thread");
-//        Thread main = Thread.currentThread();
-//        System.out.println(main.getPriority());
-//        main.setPriority(6);
-//        System.out.println(main.getPriority());
-//        System.out.println(main.getName());
-//        main.setName("Main Thread");
-//        System.out.println(main.getName());
-//        System.out.println("=========");
-//        System.out.println(main);
 
-        // create the first thread
-        MyThread t1 = new MyThread(); // the new thread was born
-        // change thr born state to Ready to Run
-        t1.start();
-        MyThread t2 = new MyThread();
-        t2.start();
+    // use it for small task
+    static ExecutorService executorService = Executors.newCachedThreadPool();
 
+    //use it for heavy task
+    static ExecutorService service = Executors.newFixedThreadPool(5);
+
+
+    public static void main(String[] args) throws InterruptedException {
+        for (int i = 0; i < 50; i++) {
+            createAndStartThreads();
+//            System.out.println(MySingleton.getCounter());
+        }
+        service.shutdown();
+    }
+    private static void createAndStartThreads(){
+        for (int i = 0; i < 10; i++) {
+//            Thread thread = new Thread(() -> MySingleton.getInstance());
+//            thread.start();
+            service.execute(()-> MySingleton.getInstance());
+
+            System.out.println("Task# " + ((ThreadPoolExecutor)service).getTaskCount());
+            System.out.println("Active# " + ((ThreadPoolExecutor)service).getActiveCount());
+        }
     }
 }
