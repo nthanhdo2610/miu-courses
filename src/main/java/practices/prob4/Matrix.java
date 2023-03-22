@@ -6,6 +6,7 @@ public class Matrix <T>{
     private int cols;
     private int rows;
 
+    // 4.	Solve the given problem using generics.
     public Matrix(int cols, int rows) {
         this.cols = cols;
         this.rows = rows;

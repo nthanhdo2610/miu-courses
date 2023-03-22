@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
+// For this problem the objective is to generalize the createMap method as much as possible.
+// You will want to generalize from Employee and String in the createMap method shown above to more general types.
 public class Q3 {
     public static  <T extends Employee> Map<String,T> createMap(List<T> list, Function<T, String> f) {
         HashMap<String, T> h = new HashMap<>();
