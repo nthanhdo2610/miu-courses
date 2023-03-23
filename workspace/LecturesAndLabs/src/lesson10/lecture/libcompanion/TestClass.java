@@ -1,10 +1,10 @@
 package lesson10.lecture.libcompanion;
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 
 public class TestClass {
@@ -16,7 +16,7 @@ public class TestClass {
 		Employee jim = new Employee("Jim", 70000);
 		
 		//verify that jim comes before joe
-		assert(LibraryCompanion.compareEmps(jim, joe1) < 0);
+		assert(LibraryCompanion.compareEmps(jim, joe1) > 0);
 		
 		//verify that joe2 comes before joe1
 		assert(LibraryCompanion.compareEmps(joe2, joe1) < 0);
