@@ -20,11 +20,16 @@ public class Main {
     // by creating a stream pipeline that transforms a list of sets (of type String) into the union of those sets.
     // Make use of the reduce method for streams.
     public static Set<String> union(List<Set<String>> sets){
-        return sets.stream().reduce(new LinkedHashSet<>(), (s1, s2) -> {
-            LinkedHashSet<String> set = new LinkedHashSet<>();
-            set.addAll(new LinkedHashSet<>(s1));
-            set.addAll(new LinkedHashSet<>(s2));
-            return set;
-        });
+            try {
+                return sets.stream().reduce(new LinkedHashSet<>(), (s1, s2) -> {
+                    LinkedHashSet<String> set = new LinkedHashSet<>();
+                    set.addAll(new LinkedHashSet<>(s1));
+                    set.addAll(new LinkedHashSet<>(s2));
+                    return set;
+                });
+            } catch(Exception e){
+                throw new IllegalStateException("sdasd");
+
+            }
     }
 }
